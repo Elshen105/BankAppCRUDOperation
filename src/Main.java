@@ -50,7 +50,7 @@ public class Main {
         System.out.println("Bankdaki isciler:");
         User[] users = bank.getAllUsers();
         for (User user : users) {
-            System.out.println(user.id + ": " + user.name + " " + user.surname);
+            System.out.println(user.getId() + ": " + user.getName() + " " + user.getSurname());
         }
     }
 
@@ -106,7 +106,7 @@ public class Main {
         scanner.nextLine();
         User findUser = bank.getUserById(id);
         if (findUser != null) {
-            System.out.println("User: " + findUser.name + " " + findUser.surname);
+            System.out.println("User: " + findUser.getName() + " " + findUser.getSurname());
         } else {
             System.out.println("For this id is not find user ");
         }

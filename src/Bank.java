@@ -1,10 +1,27 @@
 public class Bank {
-    public User[] users;
-    public int size = 0;
+    private User[] users;
+    private int size = 0;
 
     public Bank(int capacity) {
         users = new User[capacity];
         size = 0;
+    }
+
+
+    public User[] getUsers() {
+        return users;
+    }
+
+    public void setUsers(User[] users) {
+        this.users = users;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
     }
 
     public void addUser(User user) {
@@ -21,7 +38,7 @@ public class Bank {
 
     public void updateUserById(int id, User user) {
         for (int i = 0; i < size; i++) {
-            if (users[i].id == id) {
+            if (users[i].getId() == id) {
                 users[i] = user;
                 break;
             }
@@ -31,7 +48,7 @@ public class Bank {
 
     public User getUserById(int id) {
         for (int i = 0; i < size; i++) {
-            if (users[i].id == id) {
+            if (users[i].getId() == id) {
                 return users[i];
             }
         }
@@ -40,7 +57,7 @@ public class Bank {
 
     public void removeUserById(int id) {
         for (int i = 0; i < size; i++) {
-            if (users[i].id == id) {
+            if (users[i].getId() == id) {
                 for (int j = i; j < size - 1; j++) {
                     users[j] = users[j + 1];
                 }
